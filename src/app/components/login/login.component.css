@@ -1,0 +1,6 @@
+input:not(:placeholder-shown) + label {
+    /* Esto aplica la clase "peer-not-empty" cuando el input no está vacío */
+    --tw-translate-y: -0.9rem;
+    --tw-scale: 0.8;
+  }
+  

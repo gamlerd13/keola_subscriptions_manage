@@ -1,0 +1,121 @@
+<div class="dark:bg-neutral-600 flex justify-center" *ngIf="detailPayment">
+    <div class="w-9/12">
+
+        <nav class="p-4 w-full rounded-md text-neutral-300">
+            <ol class="list-reset flex">
+                <li>
+                    <a href="/suscripciones"
+                        class="text-primary transition duration-150 ease-in-out hover:text-primary-accent-300 focus:text-primary-accent-300 active:text-primary-accent-300 motion-reduce:transition-none dark:text-primary-400">Suscripciones</a>
+                </li>
+                <li>
+                    <span class="mx-2 ">/</span>
+                </li>
+                <li>
+                    <a href="/cronograma/suscripcion/{{ detailPayment.idPayment}}"
+                        class="text-primary transition duration-150 ease-in-out hover:text-primary-accent-300 focus:text-primary-accent-300 active:text-primary-accent-300 motion-reduce:transition-none dark:text-primary-400">Pagos</a>
+                </li>
+                <li>
+                    <span class="mx-2 ">/</span>
+                </li>
+                <li class="">suscripción</li>
+                <li>
+                    <span class="mx-2 ">/</span>
+                </li>
+                <li class="" style="color:#ee7724">{{detailPayment.idPayment}}</li>
+            </ol>
+        </nav>
+        <div class="p-4 text-neutral-300">
+            <h1 class="text-lg text-primary">Detalle Pago</h1>
+        </div>
+        <div class="rounded-lg border dark:border-white/10 dark:bg-neutral-600 text-neutral-700">
+
+            <div class="flex justify-center gap-4 my-2">
+                <div class="w-full md:w-6/12">
+                    <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+                        <div class="p-4">
+                            <h3>ID Pago</h3>
+                            <p class="text-base text-neutral-500">{{detailPayment.idPayment}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-6/12">
+                    <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+                        <div class="p-4">
+                            <h3>Cuota</h3>
+                            <p class="text-base text-neutral-500">{{detailPayment.quoteDescription}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center gap-4 my-2">
+                <div class="w-full md:w-6/12">
+                    <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+                        <div class="p-4">
+                            <h3>Total a Pagar</h3>
+                            <p class="text-base text-neutral-500">{{detailPayment.totalPay}} $</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-6/12">
+                    <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+                        <div class="p-4">
+                            <h3>Estado</h3>
+                            <p class="text-base text-neutral-500">{{detailPayment.verifText}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center gap-4 my-2">
+                <div class="w-full md:w-6/12">
+                    <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+                        <div class="p-4">
+                            <h3>Fecha de Pago</h3>
+                            <p class="text-base text-neutral-500">{{detailPayment.payDate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-6/12">
+                    <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+                        <div class="p-4">
+                            <h3>Siguiente Pago</h3>
+                            <p class="text-base text-neutral-500">{{detailPayment.nextExpiration}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center gap-4 my-2">
+                <div class="w-full">
+                    <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+                        <div class="p-4">
+                            <h3>Verificado</h3>
+                            <p class="text-base text-green-400" *ngIf="detailPayment.verif === 1">Este pago ya ha sido verificado.</p>
+                            <p class="text-base text-rose-400" *ngIf="detailPayment.verif === 0">Este pago aún no ha sido verificado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-6 w-full rounded-md text-neutral-300 flex flex-col items-center">
+            <h5 class="mb-2 py-10 text-xl font-medium leading-tight">Validar pago de esta suscripcion</h5>
+            <div class="flex gap-2">
+                <button type="button"
+                    class="w-40 inline-block rounded bg-amber-400 px-6 py-4 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                    data-twe-ripple-init data-twe-ripple-color="light"
+                    (click)="validatePayment(false, detailPayment.idPayment, detailPayment.idSuscription)">
+                    Rechazar
+                </button>
+                <button type="button"
+                    class="w-40 inline-block rounded bg-orange-600 px-6 py-4 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                    data-twe-ripple-init data-twe-ripple-color="light"
+                    (click)="validatePayment(true, detailPayment.idPayment, detailPayment.idSuscription )">
+                    Aceptar
+                </button>
+            </div>
+        </div>
+
+        <div class="p-6 w-full rounded-md text-neutral-300 flex flex-col items-center" *ngIf="mensaje.length > 0">
+            <h5 class="text-orange-400 mb-2 py-10 text-xl font-medium leading-tight">{{mensaje}}</h5>
+        </div>
+    </div>
+</div>

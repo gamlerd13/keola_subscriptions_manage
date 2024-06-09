@@ -1,0 +1,111 @@
+<div class="dark:bg-neutral-600 flex justify-center" *ngIf="subscription">
+  <div class="w-9/12">
+
+    <nav class="p-4 w-full rounded-md text-neutral-300">
+      <ol class="list-reset flex">
+        <li>
+          <a href="/suscripciones"
+            class="text-primary transition duration-150 ease-in-out hover:text-primary-accent-300 focus:text-primary-accent-300 active:text-primary-accent-300 motion-reduce:transition-none dark:text-primary-400">suscripciones</a>
+        </li>
+        <li>
+          <span class="mx-2 ">/</span>
+        </li>
+        <li class="">suscripción</li>
+        <li>
+          <span class="mx-2 ">/</span>
+        </li>
+        <li class="" style="color:#ee7724">{{subscription.objModel.id}}</li>
+      </ol>
+    </nav>
+    <div class="p-4 text-neutral-300">
+      <h1 class="text-lg text-primary">Detalle Suscripción</h1>
+    </div>
+    <div class="rounded-lg border dark:border-white/10 dark:bg-neutral-600 text-neutral-700" >
+
+      <div class="flex justify-center gap-4 my-2">
+        <div class="w-full md:w-6/12">
+          <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+            <div class="p-4">
+              <h3>ID</h3>
+              <p class="text-base text-neutral-500">{{subscription.objModel.id}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-6/12">
+          <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+            <div class="p-4">
+              <h3>Descripción</h3>
+              <p class="text-base text-neutral-500">{{subscription.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center gap-4 my-2">
+        <div class="w-full md:w-6/12">
+          <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+            <div class="p-4">
+              <h3>ID User</h3>
+              <p class="text-base text-neutral-500">{{subscription.objModel.idUser}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-6/12">
+          <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+            <div class="p-4">
+              <h3>Paquete</h3>
+              <p class="text-base text-neutral-500">{{subscription.objModel.package.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center gap-4 my-2">
+        <div class="w-full md:w-6/12">
+          <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+            <div class="p-4">
+              <h3>Detalle Paquete Precio</h3>
+              <p class="text-base text-neutral-500">{{subscription.objModel.packageDetailResponse.price}} $</p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-6/12">
+          <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+            <div class="p-4">
+              <h3>Fecha de Creación</h3>
+              <p class="text-base text-neutral-500">{{subscription.objModel.creationDate}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center gap-4 my-2">
+        <div class="w-full md:w-6/12">
+          <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+            <div class="p-4">
+              <h3>Estado</h3>
+              <p class="text-base text-neutral-500">{{subscription.objModel.statusName}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-6/12">
+          <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+            <div class="p-4">
+              <h3>período de gracia permitido</h3>
+              <p class="text-base text-neutral-500">{{subscription.objModel.allowGracePeriod}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center gap-4 my-2">
+        <div class="w-full">
+          <div class="rounded-lg bg-white text-left text-surface shadow-secondary-1 dark:bg-surface-dark">
+            <div class="p-4">
+              <h3>Estado</h3>
+              <p class="text-base text-neutral-500">{{subscription.objModel.beneficiaries}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+

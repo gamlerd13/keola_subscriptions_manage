@@ -1,3 +1,23 @@
+
+## Introducction
+
+1. This is a test of keola, its about a web aplication that manages subscritions.
+
+## Especification
+1. node version - 22
+2. angular version - 18
+
+
+## Usage
+
+1. Install angular globaly `npm install -g @angular/cli@17`
+2. Install dependencies: `npm install`
+3. Run the aplicaction with the following comand `ng serve`
+
+## Images
+
+
+
 # TiKeola
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
@@ -25,3 +45,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
