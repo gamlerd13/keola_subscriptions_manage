@@ -54,8 +54,14 @@ export class LoginComponent implements OnInit {
         })
       ).subscribe(response => {
         if (response) {
-          console.log('Login successful:', response);
-          this.router.navigate(['/home']);
+          console.log('Login satisfactoriamente:', response);
+          this.router.navigate(['/']).then(success => {
+            if (success) {
+              console.log('Navigation successful');
+            } else {
+              console.log('Navigation failed');
+            }
+          });
         }
       });
     }
