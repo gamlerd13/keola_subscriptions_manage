@@ -3,6 +3,12 @@
 
 1. This is a test of keola, its about a web aplication that manages subscritions.
 
+## TODOLIST
+[X]  Loguearse.
+[X]  Liste sus Membresias o Suscripciones.
+[X]  Liste su Cronograma de pagos por suscripcion o membresia.
+[X]  Una opcion donde se pueda validar los pagos(Aceptar o Rechazar).
+
 ## Especification
 1. node version - 22
 2. angular version - 18
